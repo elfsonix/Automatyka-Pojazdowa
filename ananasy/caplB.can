@@ -1,0 +1,28 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+ 
+  message ConnectionB connected;
+  int signal_x;
+  double signal_y;
+  message Signal_messageB y;
+}
+
+on message Connection_mesasage
+{
+  connected.IsConnected = 1;
+  output(connected);
+}
+
+on message Signal_message
+{
+  signal_x = this.x;
+  signal_y = sin(signal_x)*cos(signal_x/20);
+  y.y = signal_y;
+  output(y);
+}

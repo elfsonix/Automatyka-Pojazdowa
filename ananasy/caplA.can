@@ -1,0 +1,49 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+  int signal_x =1;
+  double signal_y;
+  message Connection_mesasage connection;
+  message Signal_message x;
+  
+  msTimer timer1;
+  msTimer connection_timer;
+}
+
+on start
+{
+  setTimer(connection_timer, 10);
+  setTimer(timer1,100);
+}
+
+on timer timer1
+{
+  setTimer(timer1,100);
+  signal_x+=1;
+  x.x=signal_x;
+  output(x);
+}
+on timer connection_timer
+{
+  setTimer(connection_timer, 10);
+  connection.IsConnected = 1;
+  output(connection);
+}
+
+on message ConnectionB
+{
+  if(this.IsConnected)
+  {
+    write("A & B connected");
+  }
+}
+
+on message Signal_messageB
+{
+  write("%f",this.y);
+}
