@@ -36,16 +36,11 @@ BS_:
 BU_:
 
 
-BO_ 2 Signal_messageB: 8 Vector__XXX
- SG_ y : 0|10@1- (1,0) [-512|511] "" Vector__XXX
-
-BO_ 0 ConnectionB: 8 Vector__XXX
- SG_ IsConnected : 0|1@1+ (1,0) [0|1] "" Vector__XXX
-
 BO_ 1 Connection_mesasage: 8 Vector__XXX
  SG_ IsConnected : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 256 Signal_message: 8 Vector__XXX
+BO_ 256 Signal_message: 4 Vector__XXX
+ SG_ y : 16|10@1- (1,0) [-512|511] "" Vector__XXX
  SG_ x : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
 
 

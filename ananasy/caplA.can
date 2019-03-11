@@ -9,7 +9,7 @@ variables
   int signal_x =1;
   double signal_y;
   message Connection_mesasage connection;
-  message Signal_message x;
+  message Signal_message msg_x;
   
   msTimer timer1;
   msTimer connection_timer;
@@ -25,8 +25,8 @@ on timer timer1
 {
   setTimer(timer1,100);
   signal_x+=1;
-  x.x=signal_x;
-  output(x);
+  msg_x.x = signal_x;
+  output(msg_x);
 }
 on timer connection_timer
 {
@@ -35,7 +35,7 @@ on timer connection_timer
   output(connection);
 }
 
-on message ConnectionB
+on message Connection_mesasage
 {
   if(this.IsConnected)
   {
@@ -43,7 +43,7 @@ on message ConnectionB
   }
 }
 
-on message Signal_messageB
+on message Signal_message
 {
   write("%f",this.y);
 }

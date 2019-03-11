@@ -7,22 +7,22 @@ includes
 variables
 {
  
-  message ConnectionB connected;
+  message Connection_mesasage connection;
   int signal_x;
   double signal_y;
-  message Signal_messageB y;
+  message Signal_message msg_y;
 }
 
 on message Connection_mesasage
 {
-  connected.IsConnected = 1;
-  output(connected);
+  connection.IsConnected = 1;
+  output(connection);
 }
 
 on message Signal_message
 {
   signal_x = this.x;
   signal_y = sin(signal_x)*cos(signal_x/20);
-  y.y = signal_y;
-  output(y);
+  msg_y.y = signal_y;
+  output(msg_y);
 }
