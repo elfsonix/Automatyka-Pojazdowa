@@ -13,7 +13,7 @@ variables
   message Signal_message msg_y;
 }
 
-on message Connection_mesasage
+on message Connection_message
 {
   connection.IsConnected = 1;
   output(connection);

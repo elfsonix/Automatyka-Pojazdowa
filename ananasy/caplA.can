@@ -1,4 +1,4 @@
-/*@!Encoding:1250*/
+ /*@!Encoding:1250*/
 includes
 {
   
@@ -6,7 +6,7 @@ includes
 
 variables
 {
-  int signal_x =1;
+  int signal_x=1;
   double signal_y;
   message Connection_mesasage connection;
   message Signal_message msg_x;
@@ -31,13 +31,13 @@ on timer timer1
 on timer connection_timer
 {
   setTimer(connection_timer, 10);
-  connection.IsConnected = 1;
+  connection.IsConnectedA = 1;
   output(connection);
 }
 
 on message Connection_mesasage
 {
-  if(this.IsConnected)
+  if(this.IsConnectedB)
   {
     write("A & B connected");
   }
