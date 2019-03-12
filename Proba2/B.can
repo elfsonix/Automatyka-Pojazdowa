@@ -1,0 +1,32 @@
+/*@!Encoding:1250*/
+includes
+{
+}
+
+variables
+{
+  message Signal_Message msg_y;
+  float y;
+  message Connection_Message B_connected;
+ 
+}
+
+on start
+{
+  y= 0;
+}
+
+on message Connection_Message
+{
+  B_connected.BIsConnected = 1;
+  output(B_connected);
+}
+
+on message Signal_Message
+{
+  y = sin(msg_y.Signal_x)*cos(msg_y.Signal_x/20);
+  msg_y.Signal_y = y;
+  write("y: %f", y);
+  write("msgy: %f", $Signal_y);
+  output(msg_y);
+}

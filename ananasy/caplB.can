@@ -7,7 +7,7 @@ includes
 variables
 {
  
-  message Connection_mesasage connection;
+  message Connection_message connection;
   int signal_x;
   double signal_y;
   message Signal_message msg_y;

@@ -1,0 +1,42 @@
+/*@!Encoding:1250*/
+includes
+{
+}
+
+variables
+{
+  float x;
+  message Connection_Message A_connected;
+  message Signal_Message msg_x;
+  
+  mstimer connectionTimer;
+  msTimer messageTimer;
+}
+
+on start
+{
+  setTimer(connectionTimer, 10);
+  setTimer(messageTimer,100);
+  x = 0;
+  msg_x.Signal_x = 0;
+}
+
+on message Connection_Message
+{
+  //if(this.BIsConnected) write ("A & B connected");
+}
+
+on timer connectionTimer
+{
+  A_connected.AIsConnected = 1;
+  output(A_connected);
+}
+
+on timer messageTimer{
+  setTimer(messageTimer, 100);
+  x +=1;
+  msg_x.Signal_x += 1;
+  write("x: %f", x);
+  write("msgx: %f", msg_x.Signal_x);
+  output(msg_x);
+}
