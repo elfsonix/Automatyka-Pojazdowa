@@ -5,28 +5,24 @@ includes
 
 variables
 {
-  message Signal_Message msg_y;
-  float y;
-  message Connection_Message B_connected;
- 
+  msTimer connection_timer;
 }
 
 on start
 {
-  y= 0;
+  setTimer(connection_timer, 10);
 }
 
-on message Connection_Message
+on timer connection_timer
 {
+  message Connection_Message B_connected;
   B_connected.BIsConnected = 1;
   output(B_connected);
 }
 
-on message Signal_Message
+on message Signal_Message_X
 {
-  y = sin(msg_y.Signal_x)*cos(msg_y.Signal_x/20);
-  msg_y.Signal_y = y;
-  write("y: %f", y);
-  write("msgy: %f", $Signal_y);
+  message Signal_Message_y msg_y;
+  msg_y.Signal_y = sin(this.Signal_x)*cos(this.Signal_x/20);
   output(msg_y);
 }

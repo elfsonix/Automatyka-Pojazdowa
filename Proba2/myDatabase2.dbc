@@ -37,21 +37,21 @@ BU_:
 
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ Signal_x : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 3 Output: 2 Vector__XXX
- SG_ Y : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 2 Signal_Message_Y: 6 Vector__XXX
- SG_ Signal_yy : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 1 Signal_Message_X: 4 Vector__XXX
- SG_ Signal_y : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ Signal_x : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ x : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 BO_ 0 Connection_Message: 2 Vector__XXX
- SG_ AIsConnected : 8|8@1- (1,0) [0|0] "" Vector__XXX
- SG_ BIsConnected : 0|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ BIsConnected : 8|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ AIsConnected : 0|8@1- (1,0) [0|0] "" Vector__XXX
+
+BO_ 5 Signal_Message_y: 8 Vector__XXX
+ SG_ Signal_y : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+
+BO_ 2 Output: 8 Vector__XXX
+ SG_ Y : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+
+BO_ 1 Signal_Message_X: 8 Vector__XXX
+ SG_ Signal_y : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ Signal_x : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 
 
@@ -70,9 +70,9 @@ BA_DEF_DEF_  "CANoeJitterMax" 0;
 BA_DEF_DEF_  "CANoeJitterMin" 0;
 BA_DEF_DEF_  "CANoeDrift" 0;
 BA_DEF_DEF_  "CANoeStartDelay" 0;
-SIG_VALTYPE_ 3221225472 Signal_x : 1;
-SIG_VALTYPE_ 3 Y : 1;
-SIG_VALTYPE_ 2 Signal_yy : 1;
+SIG_VALTYPE_ 3221225472 x : 1;
+SIG_VALTYPE_ 5 Signal_y : 1;
+SIG_VALTYPE_ 2 Y : 1;
 SIG_VALTYPE_ 1 Signal_y : 1;
 SIG_VALTYPE_ 1 Signal_x : 1;
 
