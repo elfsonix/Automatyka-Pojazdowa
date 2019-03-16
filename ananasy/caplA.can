@@ -8,7 +8,7 @@ variables
 {
   int signal_x=1;
   double signal_y;
-  message Connection_mesasage connection;
+  message Connection_message connection;
   message Signal_message msg_x;
   
   msTimer timer1;
@@ -31,13 +31,13 @@ on timer timer1
 on timer connection_timer
 {
   setTimer(connection_timer, 10);
-  connection.IsConnectedA = 1;
+  connection.IsConnected = 1;
   output(connection);
 }
 
-on message Connection_mesasage
+on message Connection_message
 {
-  if(this.IsConnectedB)
+  if(this.IsConnected)
   {
     write("A & B connected");
   }

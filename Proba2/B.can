@@ -1,0 +1,28 @@
+/*@!Encoding:1250*/
+includes
+{
+}
+
+variables
+{
+  msTimer connection_timer;
+}
+
+on start
+{
+  setTimer(connection_timer, 10);
+}
+
+on timer connection_timer
+{
+  message Connection_Message B_connected;
+  B_connected.BIsConnected = 1;
+  output(B_connected);
+}
+
+on message Signal_Message_X
+{
+  message Signal_Message_y msg_y;
+  msg_y.Signal_y = sin(this.Signal_x)*cos(this.Signal_x/20);
+  output(msg_y);
+}
