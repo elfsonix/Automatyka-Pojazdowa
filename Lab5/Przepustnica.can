@@ -1,0 +1,17 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+}
+
+on sysvar sysvar::MyNameSpace::svThrottle
+{
+  message ThrottleMsg Throttle;
+  Throttle.ThrottleRawValue = SysGetVariableFloat(sysvar::MyNameSpace::svThrottle);
+  Throttle.ThrottleValue = Throttle.ThrottleRawValue/2500;
+  output(Throttle);
+}

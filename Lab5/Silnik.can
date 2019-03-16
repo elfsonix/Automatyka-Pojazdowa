@@ -1,0 +1,44 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+  msTimer myTimer;
+  double a = -0.5;
+  double b = 0.75;
+  double h = 0.1;
+  float tempSpeed;
+  float newSpeed;
+  float throttle;
+  message ThrottleMsg Throttle;
+}
+
+on start
+{
+  setTimer(myTimer, 100);
+  newSpeed = 0;
+  //tempSpeed = 0;
+  throttle = 0;
+  SysSetVariableFloat(sysvar::MyNameSpace::svEngine, 0);
+}
+on message ThrottleMsg
+{
+  throttle = this.ThrottleValue;
+}
+ 
+on timer myTimer{
+  message EngineMsg Engine;
+  
+  //tempSpeed = sysGetVariableFloat(sysvar::MyNameSpace::svEngine);  
+  newSpeed = (1+a*h)*newSpeed + b*h*throttle;
+  Engine.EngineSpeedRawValue = newSpeed;
+  Engine.EngineSpeedValue = newSpeed*1500;
+  SysSetVariableFloat(sysvar::MyNameSpace::svEngine, Engine.EngineSpeedValue);
+  output(Engine);
+  setTimer(myTimer, 100);
+}
+
+
