@@ -12,14 +12,13 @@ variables
 on message request_message
 {
   message response_message Response;
-  Response.response_id = 
-  Response.response_DLC = this.request_DLC;
-  Response.response_mode = this.request_mode + 100;
-  Response.response_PID = this.request_PID;
-  Response.response_Ah= 170;
-  Response.response_Bh= 0xaa;
-  Response.response_Ch= 0xaa;
-  Response.response_Dh= 0xaa;
-  
-  output(Response);
+  sysSetVariableString(sysvar::response_ID,"7E8");
+  sysSetVariableString(sysvar::response_mode, "41");
+  sysSetVariableString(sysvar::response_PID, "0D");
+  sysSetVariableString(sysvar::response_DLC, "03");
+  sysSetVariableString(sysvar::response_Ah, "32");
+  sysSetVariableString(sysvar::response_Bh, "aa");
+  sysSetVariableString(sysvar::response_Ch, "aa");
+  sysSetVariableString(sysvar::response_Dh, "aa");
+  sysSetVariableString(sysvar::response_unused, "aa");
 }
