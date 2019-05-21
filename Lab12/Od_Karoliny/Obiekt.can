@@ -1,0 +1,23 @@
+/*@!Encoding:1250*/
+includes
+{
+  
+}
+
+variables
+{
+    int vel = 0;
+}
+
+on message Request
+{
+  if(this.Request_ID == 0x0D)
+  {
+    message Response rspns;
+    rspns.Response_ID = 0x0D;
+    rspns.Response_DLC = 0x3;
+    rspns.Response_0 = 0x41;
+    rspns.Response_1 = 0x32 + vel++;
+    output(rspns);
+  }
+}
