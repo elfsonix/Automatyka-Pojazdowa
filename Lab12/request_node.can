@@ -7,19 +7,17 @@ variables
 {
 }
 
-
 on sysvar send
 {
   message request_message Request;
-  Request.request_id = sysGetVariableInt(sysvar::request_id);
-  Request.request_DLC = sysGetVariableInt(sysvar::request_DLC);
-  Request.request_mode = sysGetVariableInt(sysvar::request_mode);
-  Request.request_PID = sysGetVariableInt(sysvar::request_PID);
-  Request.request_Ah = sysGetVariableInt(sysvar::request_Ah);
-  Request.request_Bh = sysGetVariableInt(sysvar::request_Bh);
-  Request.request_Ch = sysGetVariableInt(sysvar::request_Ch);
-  Request.request_Dh = sysGetVariableInt(sysvar::request_Dh);
-  Request.request_unused = sysGetVariableInt(sysvar::request_unused);
-  
+  sysSetVariableString(sysvar::request_id,"7DF");
+  sysSetVariableString(sysvar::request_mode, "01");
+  sysSetVariableString(sysvar::request_PID, "0D");
+  sysSetVariableString(sysvar::request_DLC, "02");
+  sysSetVariableString(sysvar::request_Ah, "55");
+  sysSetVariableString(sysvar::request_Bh, "55");
+  sysSetVariableString(sysvar::request_Ch, "55");
+  sysSetVariableString(sysvar::request_Dh, "55");
+  sysSetVariableString(sysvar::request_unused, "55");
   output(Request);
 }
