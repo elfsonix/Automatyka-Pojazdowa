@@ -1,0 +1,16 @@
+h = 0.1;
+T = 80;
+v = 1;
+L = [1 3 10 30];
+
+for i = 1:6
+   [u, t] = przypadki(i);
+   figure;
+   title(sprintf('Przypadek %d', i));
+   for l = 1:4
+       length = L(l);
+       for c = 1:3
+           
+       end
+   end
+end

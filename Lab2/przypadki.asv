@@ -1,0 +1,27 @@
+function [u, t] = przypadki(i)
+%u = [delta_f delta_r a]
+if i == 1
+    delta_f = deg2rad(5)*ones(800,1);
+    delta_r = zeros(800,1);
+    v = 1;
+    t = 0:0.1:80;
+elseif i == 2
+    t = 0:0.1:80;
+    for j = 1:800
+    delta_f(j) = deg2rad(10*sin(0.25/(2*pi*j)));
+    end
+    delta_r = deg2rad(0);
+    v = 1;
+    
+elseif i == 3
+    
+elseif i == 4
+    
+elseif i == 5
+    
+elseif i == 6
+    
+end
+
+u = [delta_f delta_r a];
+end
